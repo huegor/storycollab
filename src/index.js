@@ -61,7 +61,7 @@ class Master extends React.Component {
   disableSubmit(){
     this.setState({submitEnabled: false, disabled: true});
     //after 15 min, re-enable submit
-    setTimeout(() => this.setState({submitEnabled: true, disabled: false}), 1000);
+    setTimeout(() => this.setState({submitEnabled: true, disabled: false}), 900000);
   }
 
   handleChange(event) { //react re-renders after every change
