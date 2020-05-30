@@ -2,11 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import firebase from './lib/firebase.js';
-import Record from "./lib/Record.js";
 
 //note: can't use fs (file system) bc react stubs out node core modules
-
-//const lineIn = new LineIn();
 
 let dbRef = firebase.firestore().collection('words');
 let storageRef = firebase.storage().ref();
@@ -121,15 +118,6 @@ class Master extends React.Component {
           <UpdatedStory onClick={id => this.handleDelete(id)} disabled={this.state.disabled}/>
         </div>
         <div>
-          {
-          //   <Record
-          //   recordingState={this.state.recording}
-          //   startCallback={startCallback}
-          //   endCallback={endCallback}
-          //   savedCallback={savedCallback}
-          //   uploadingCallback={uploadingCallback}
-          // />
-          }
           {this.state.submitEnabled === true &&(
             <form onSubmit={this.handleSubmit}>
               <label>
