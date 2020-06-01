@@ -6,8 +6,6 @@ import firebase from './lib/firebase.js';
 //note: can't use fs (file system) bc react stubs out node core modules
 
 let dbRef = firebase.firestore().collection('words');
-let storageRef = firebase.storage().ref();
-
 
 function UpdateWords() { //API call to firebase
   const [words, setWords] = useState([]);
@@ -43,25 +41,48 @@ function UpdatedStory(props) {
   );
 }
 
+
 // React Component
 class Master extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       value: '',
-      submitEnabled: true,
       disabled: false,
-      recording: 'ready'
+      recording: 'ready',
+      startTime: 0,
+      waitLeft: 0
     };
 
     this.handleChange = this.handleChange.bind(this); //other way of writing is onSubmit={(event) => {this.handleChange(event)}}
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentDidMount(){
+    //check if startTime exists from prev session
+    if (localStorage.getItem('startTime')) {
+      //check if 15 min has passed
+      const timeLeft = 900000 - (new Date().getTime() - localStorage.getItem('startTime'))
+      if (timeLeft > 0) { //if so, disable buttons and start time out w remaining time
+        this.setState({disabled: true});
+        setTimeout(() => {
+          this.setState({disabled: false})
+          localStorage.removeItem('startTime')
+        }, timeLeft);
+      }
+    }
+  }
+
   disableSubmit(){
-    this.setState({submitEnabled: false, disabled: true});
-    //after 15 min, re-enable submit
-    setTimeout(() => this.setState({submitEnabled: true, disabled: false}), 900000);
+    //disable buttons
+    this.setState({disabled: true});
+    //create startTime by getting current time and add to localStorage
+    localStorage.setItem('startTime', new Date().getTime());
+    //At the end of time out, remove startTime
+    setTimeout(() => {
+      this.setState({disabled: false})
+      localStorage.removeItem('startTime')
+    }, 900000);
   }
 
   handleChange(event) { //react re-renders after every change
@@ -87,27 +108,6 @@ class Master extends React.Component {
   }
 
   render() {
-
-    // start recording
-    const startCallback = () => {
-      this.setState({recording: 'started'})
-    };
-
-    // end recording
-    const endCallback = () => {
-      this.setState({recording: 'finished'})
-    };
-
-    // uploading
-    const uploadingCallback = () => {
-      this.setState({recording: 'uploading'})
-    };
-
-    // saved
-    const savedCallback = () => {
-      this.setState({recording: 'saved'})
-    };
-
     return (
       <div>
         <div>
@@ -118,7 +118,7 @@ class Master extends React.Component {
           <UpdatedStory onClick={id => this.handleDelete(id)} disabled={this.state.disabled}/>
         </div>
         <div>
-          {this.state.submitEnabled === true &&(
+          {this.state.disabled !== true &&(
             <form onSubmit={this.handleSubmit}>
               <label>
                 <input type="text" value={this.state.value} onChange={this.handleChange} />
