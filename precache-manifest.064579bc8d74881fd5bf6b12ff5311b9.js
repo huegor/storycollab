@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "64d31dfb34bce0871e85fe034ac12b4d",
+    "revision": "654a383658e36bdcd1402c4e955f9288",
     "url": "/storycollab/index.html"
   },
   {
-    "revision": "21998aca6432f016aa35",
+    "revision": "50df10d07de8b70e0f4e",
     "url": "/storycollab/static/css/main.1d93421e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/storycollab/static/js/2.90cdee86.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "21998aca6432f016aa35",
-    "url": "/storycollab/static/js/main.d4c3ea58.chunk.js"
+    "revision": "50df10d07de8b70e0f4e",
+    "url": "/storycollab/static/js/main.28edd2bf.chunk.js"
   },
   {
     "revision": "0d79eaebc1399778035e",
