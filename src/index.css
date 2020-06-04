@@ -28,7 +28,7 @@ button:disabled {
 }
 
 button:hover:enabled {
-  color: #333;
+  color: #ab2f20;
 }
 
 input[type=submit], .recordButton {
@@ -51,7 +51,8 @@ input[type=submit]:disabled {
 }
 
 input[type=submit]:hover:enabled, .recordButton:hover {
-  background-color: #383838;
+  color: #ab2f20;
+  border: 2px solid #ab2f20;
 }
 
 input[type=text]{
