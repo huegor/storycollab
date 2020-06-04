@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/storycollab/static/css/main.77d7fde8.chunk.css",
-    "main.js": "/storycollab/static/js/main.529a3a44.chunk.js",
-    "main.js.map": "/storycollab/static/js/main.529a3a44.chunk.js.map",
+    "main.js": "/storycollab/static/js/main.46dfff9d.chunk.js",
+    "main.js.map": "/storycollab/static/js/main.46dfff9d.chunk.js.map",
     "runtime-main.js": "/storycollab/static/js/runtime-main.f2035f1f.js",
     "runtime-main.js.map": "/storycollab/static/js/runtime-main.f2035f1f.js.map",
     "static/js/2.90cdee86.chunk.js": "/storycollab/static/js/2.90cdee86.chunk.js",
     "static/js/2.90cdee86.chunk.js.map": "/storycollab/static/js/2.90cdee86.chunk.js.map",
     "index.html": "/storycollab/index.html",
-    "precache-manifest.ff6d38dd9ae4d8a2a3cff42f524b8172.js": "/storycollab/precache-manifest.ff6d38dd9ae4d8a2a3cff42f524b8172.js",
+    "precache-manifest.04d85732a5d07f2de8263eab4f0cbdb7.js": "/storycollab/precache-manifest.04d85732a5d07f2de8263eab4f0cbdb7.js",
     "service-worker.js": "/storycollab/service-worker.js",
     "static/css/main.77d7fde8.chunk.css.map": "/storycollab/static/css/main.77d7fde8.chunk.css.map",
     "static/js/2.90cdee86.chunk.js.LICENSE.txt": "/storycollab/static/js/2.90cdee86.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.f2035f1f.js",
     "static/js/2.90cdee86.chunk.js",
     "static/css/main.77d7fde8.chunk.css",
-    "static/js/main.529a3a44.chunk.js"
+    "static/js/main.46dfff9d.chunk.js"
   ]
 }
